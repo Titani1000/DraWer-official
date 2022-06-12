@@ -1,0 +1,36 @@
+// よく使うメインカラー
+$bColor: #4B4B4B;
+$mColor: #FDFAF6;
+
+$sColorG: #CCCCCC;
+$sColorBG: #666666;
+
+
+// フォントファミリー
+$mFontE: 'Righteous', cursive; //メインフォント主に英語部分
+$bFontJ: 'Roboto', sans-serif; //ベースフォント主に日本語部分
+
+
+// ハンバーガーメニューkeyframes
+@keyframes MenuAnime {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// モーション
+@keyframes anglemotion {
+  0% {
+    transform: scale(0, 1);
+    transform-origin: 0 0;
+  }
+
+  100% {
+    transform: scale(1, 1);
+    transform-origin: 0 0;
+  }
+}

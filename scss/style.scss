@@ -1,0 +1,11 @@
+// 上部各SCSSファイルから読み込むための@USE要素
+@use "part/variable" as *;
+// トップ部分のSCSSファイル
+@use "main/top" as *;
+// アニメーション専用ファイル
+@use "part/motion" as *;
+// 色変更用ファイル
+@use "part/drawer" as *;
+
+// 汎用CSS
+@use "main/index" as *;
