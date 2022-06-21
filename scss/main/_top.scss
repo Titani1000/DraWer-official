@@ -135,13 +135,27 @@
   padding: 5em 0 0 3em;
   line-height: 1;
   background: $bColor;
+  overflow: hidden;
+
+  // 下半分は白色の背景
+  &::before {
+    content: '';
+    background: #fff;
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+  }
 
 
-  .news_wrapper {
+  .news_sec {
     width: 76%;
     margin-left: auto;
     background-color: $mColor;
     padding: 3em;
+    white-space: nowrap;
+    z-index: 5;
 
     h2 {
       font-size: 2em;
@@ -165,25 +179,27 @@
         height: 50px;
         border-radius: 50%;
         cursor: pointer;
-
       }
       
       ul {
         width: 100%;
-        white-space: nowrap;
-        overflow-x: hidden;
-        scroll-behavior: smooth;
-        scroll-snap-type: inline;
         display: flex;
         align-items: center;
         justify-content: space-around;
+        // overflow-x: auto;
+        // overflow: hidden;
+        // scroll-behavior: smooth;
+        // scroll-snap-type: inline;
 
         li {
           width: 26%;
           height: auto;
           margin: 0 1.5em;
           scroll-snap-align: center;
+          // display: inline-block;
+
           .pf_img {
+            display: block;
             position: relative;
             width: 100%;
             height: 100%;
@@ -197,8 +213,8 @@
               position: absolute;
               bottom: -10%;
               right: -20%;
-              width: 100px;
-              height: 100px;
+              width: 80px;
+              height: 80px;
               background: $bColor;
               border-radius: 50%;
 
@@ -211,8 +227,8 @@
                 width: 0;
                 height: 0;
                 border-style: solid;
-                border-width: 50px 30px 0 30px;
-                border-radius: 5px;
+                border-width: 40px 20px 0 20px;
+                border-radius: 3px;
               }
             }
           }
@@ -220,5 +236,247 @@
       }
     }
 
+  }
+}
+
+
+
+// ABOUT
+#about {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  .about_sec {
+    padding: 3em 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 3;
+    background: $bColor;
+
+    // 背景装飾文字要素
+    &::after {
+      content: 'INTRODUCTION';
+      color: $sColorBG;
+      font-family: $mFontE;
+      font-size: 4em;
+      letter-spacing: .2em;
+      position: absolute;
+      bottom: 0;
+      left: 5%;
+      z-index: 1;
+    }
+
+    // Aboutテキスト部分
+    .about_lead {
+      width: 40%;
+      display: inline-block;
+      color: $mColor;
+      font-family: $bFontJ;
+
+      .sec_ttl {
+        line-height: 1.2;
+        margin-bottom: 3em;
+        h2 {
+          position: relative;
+          font-size: 3em;
+          font-family: $mFontE;
+          letter-spacing: .1em;
+          display: inline-block;
+
+          &::after {
+            content: '';
+            width: 100px;
+            height: 3px;
+            position: absolute;
+            right: -60%;
+            top: 50%;
+            background: $mColor;
+          }
+        }
+        h3 {
+          font-size: 1.3em;
+          span {
+            font-family: $mFontE;
+          }
+        }
+      }
+      .about_txt {
+        font-size: 0.8em;
+        line-height: 2.5em;
+        color: #CCCCCC;
+      }
+    }
+
+    // 画像部分CSS
+    .about_img {
+      position: relative;
+      width: 40%;
+      height: 100%;
+      top: 70px;
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ddd;
+        background: #fff;
+        border-radius: 2px;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        vertical-align: bottom;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+// SERVICE
+#service {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  .service_sec {
+    background: $mColor;
+    padding: 1em 0;
+    width: 100%;
+    margin-top: 5em;
+
+    // サービス見出しテキスト部分
+    .sec_ttl {
+      text-align: center;
+
+      h2 {
+        position: relative;
+        font-size: 3em;
+        font-family: $mFontE;
+        display: inline-block;
+        line-height: 1.2em;
+        letter-spacing: 0.1em;
+        margin-bottom: 1em;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -20%;
+          left: 15%;
+          width: 70%;
+          height: 3px;
+          background: $bColor;
+        }
+      }
+    }
+
+    // サービスコンテンツ要素
+      .service_content {
+        position: relative;
+        width: 100%;
+        height: auto;
+        .service_list {
+          ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+            li {
+              position: relative;
+              vertical-align: bottom;
+              width: 32%;
+              height: auto;
+              display: flex;
+              align-items: center;
+              background-color: #fff;
+              margin: 3em 0;
+              box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+              
+              // ２番目だけ下に下げる
+              &:nth-child(2) {
+                top: 30px;
+              }
+              // サービス中身画像
+              .service_img {
+                width: 100%;
+                vertical-align: bottom;
+                img {
+                  width: 100%;
+                  object-fit: cover;
+                  background-size: cover;
+                  height: auto;
+                }
+              }
+              // サービステキスト部分
+              .service_card_txt {
+                width: 70%;
+                line-height: 1.5em;
+                text-align: center;
+                h3 {
+                  position: relative;
+                  font-size: 2em;
+                  font-family: $mFontE;
+                  margin-bottom: 1em;
+                 
+                  &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -50%;
+                    left: 35%;
+                    margin: 0 auto;
+                    background-color: $bColor;
+                    width: 30%;
+                    height: 3px;
+                  }
+                }
+                p {
+                  font-size: 0.8em;
+                  line-height: 1.2em;
+                  font-family: $bFontJ;
+
+                }
+              }
+
+              // 疑似要素 右下ナンバー装飾
+              .Card_No {
+                position: absolute;
+                bottom: -20%;
+                right: 0%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: $bColor;
+                font-size: 3em;
+                font-family: $mFontE;
+                color: $mColor;
+                border-radius: 50%;
+                line-height: 1;
+                width: 80px;
+                height: 80px;
+              }
+            }
+          }
+        }
+      }
+  }
+}
+
+
+// SKILLS
+#skills {
+  width: 100%;
+  height: auto;
+  .skills_sec {
+    position: relative;
+    background-color: $bColor;
   }
 }

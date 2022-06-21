@@ -33,6 +33,7 @@
 <link rel="stylesheet" type="text/scss" href="./scss/part/_motion.scss">
 <link rel="stylesheet" type="text/scss" href="./scss/part/_variable.scss">
  <!-- 外部リンクCDN -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
   <!-- フォント追加 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,10 +112,15 @@
 
    <!-- What’s News -->
    <section id="news">
-     <div class="news_wrapper">
+     <div class="news_sec">
        <h2>What's News</h2>
        <div class="Portfolio_list">
-         <ul>
+          <!-- <input type="radio" name="slideshow" id="s-1" checked>
+          <input type="radio" name="slideshow" id="s-2">
+          <input type="radio" name="slideshow" id="s-3">
+          <input type="radio" name="slideshow" id="s-4">
+          <input type="radio" name="slideshow" id="s-5"> -->
+         <ul class="New_list">
            <li>
              <a href="#">
                <div class="pf_img">
@@ -156,10 +162,171 @@
            </li>
          </ul>
 
-         <span class="right"></span>
+         <!-- <span class="right"></span> -->
+        <div class="list_label">
+          <label for="s-1"></label>
+          <label for="s-2"></label>
+          <label for="s-3"></label>
+          <label for="s-4"></label>
+          <label for="s-5"></label>
+        </div>
        </div>
      </div>
    </section>
+
+
+   <!-- ABOUT -->
+  <section id="about">
+    <div class="about_sec">
+      <div class="about_lead">
+        <div class="sec_ttl">
+          <h2>ABOUT</h2>
+          <h3><span>DraWer</span>について</h3>
+        </div>
+        <!-- 下記分は後で必ず変えること↓ -->
+        <div class="about_txt">
+          <p>私はWeb制作系フリーランスとして、規模・業界問わずお客様が抱えるWeb課題を解決するパートナーを目指しています。</p>
+          「お客様の未来が私たちの明日へ。」それがLostaが持つミッションです。<br>
+          ITが普及した現代においてなくてはならないWebを通じて、お客様が抱えている課題を解決し、持続的な成長へと導いていきます。</p>
+        </div>
+        
+      </div>
+      <div class="about_img">
+        <img src="./image/top/about.jpg" alt="DraWerについて">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE -->
+  <section id="service">
+    <div class="service_sec">
+      <div class="sec_ttl">
+        <h2>SERVICE</h2>
+        <p>DraWerのWebサービスがこちらに入ります。<br>
+        ヒヤリングやCMS導入、レスポンシヴ対応などの代表的なサービスを行っております</p>
+      </div>
+      <!-- ここからコンテンツの中身 -->
+      <div class="service_content">
+        <div class="service_list">
+          <ul>
+            <li>
+              <div class="service_img">
+                <img src="./image/service/service-planning.svg" alt="サイトリニューアル">
+              </div>
+              <div class="service_card_txt">
+                <h3>Renewal</h3>
+                <p>Webサイトのリニューアルをし、ご要望と課題を洗い出しお客様にとって最適なサイトを構築致します。</p>
+              </div>
+              <span class="Card_No">1</span>
+            </li>
+
+            <li>
+              <div class="service_img">
+                <img src="./image/service/service-seo.svg" alt="SEO戦略立案">
+              </div>
+              <div class="service_card_txt">
+                <h3>SEO</h3>
+                <p>サイトの構造を見直し、
+                特定のキーワードで検索結果上位に
+                表示されるよう対策を行います。</p>
+              </div>
+              <span class="Card_No">2</span>
+            </li>
+
+            <li>
+              <div class="service_img">
+                <img src="./image/service/service-responsive.svg" alt="レスポンシヴ対応">
+              </div>
+              <div class="service_card_txt">
+                <h3>Responsive</h3>
+                <p>Webサイトをスマホ版に対応致します。
+                近年のスマホ普及率は98%ですので、
+                レスポンシブの対応は必須です。</p>
+              </div>
+              <span class="Card_No">3</span>
+            </li>
+
+            <li>
+              <div class="service_img">
+                <img src="./image/service/service-cms.svg" alt="CMS設定">
+              </div>
+              <div class="service_card_txt">
+                <h3>CMS</h3>
+                <p>サイトの構造を見直し、
+                特定のキーワードで検索結果上位に
+                表示されるよう対策を行います。</p>
+              </div>
+              <span class="Card_No">4</span>
+            </li>
+
+            <li>
+              <div class="service_img">
+                <img src="./image/service/service-animation.svg" alt="アニメーション設定">
+              </div>
+              <div class="service_card_txt">
+                <h3>Animation</h3>
+                <p>サイトにアニメーションを追加し、
+                サイトを訪れた方に見ていて飽きないようなアニメーションを追加いたします。</p>
+              </div>
+              <span class="Card_No">5</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="skills_sec">
+      <!-- スキルタイトル -->
+      <div class="sec_ttl">
+        <h2>SKILLS</h2>
+        <h3>使用言語一覧</h3>
+      </div>
+
+      <!-- スキル中身のコンテンツカード要素 -->
+      <div class="skill_content">
+        <ul>
+          <li>
+            <div class="skill_img"><img src="./image/skills/html-5.svg" alt="HTML&CSSのアイコン画像"></div>
+            <div class="skills_txt">
+              <h3>HTML / CSS</h3>
+              <p>HTMLとCSSを使って一からの
+              Webサイト構築が可能です。
+              また、レスポンシブを意識したコーディングも可能です。</p>
+            </div>
+          </li>
+      
+          <li>
+            <div class="skill_img"><img src="./image/skills/javascript.svg" alt="JavaScriptのアイコン画像"></div>
+            <div class="skills_txt">
+              <h3>JavaScript</h3>
+              <p>jQueryやJavascriptを使った
+              サイトに動きのあるアニメーション
+              スライドショーやスムーススクロール等のアニメーション をつけることが可能です。</p>
+            </div>
+          </li>
+      
+          <li>
+            <div class="skill_img"><img src="./image/skills/sass.svg" alt="Sassのアイコン画像"></div>
+            <div class="skills_txt">
+              <h3>SASS(Dart Sass)</h3>
+              <p>SCSSを用いて コーディングの効率化や修正等を楽にすることが可能です。
+              現在はDart Sassを用いてコーディングを行っております。</p>
+            </div>
+          </li>
+      
+        </ul>
+      </div>
+
+    </div>
+
+    
+
+  </section>
 
  </main>
  <!----- /main ----->
@@ -171,6 +338,8 @@
  <!----- /footer ----->
  </body>
  <!-- 外部CDN読み込み用 jQ -->
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
  <script type="text/javascript" src="./js/main.js"></script>
 </html>

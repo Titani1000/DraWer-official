@@ -12,9 +12,41 @@ $(".menu_nav a").click(function () {
 });
 
 // ポートフォリオ部分
-document.querySelectorAll('.right_arrow').forEach(elm => {
-	elm.onclick = function () {
-		let div = this.parentNode.querySelector('.Portfolio_list ul');
-		div.scrollLeft += (div.clientWidth / 2);
-	};
+  const swiper = new Swiper('.Portfolio_list', {
+  // Optional parameters
+  slidesPerView: 1,
+  spaceBetween: 10,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  breakpoints: {
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 10
+    },
+    // when window width is >= 768px
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 15
+    },
+    // when window width is >= 1024px
+    1024: {
+      slidesPerView: 4,
+      spaceBetween: 20
+    }
+  }
 });
+
+
+
+// document.querySelectorAll('.right_arrow').forEach(elm => {
+// 	elm.onclick = function () {
+// 		let div = this.parentNode.querySelector('.Portfolio_list ul');
+// 		div.scrollLeft += (div.clientWidth / 2);
+// 	};
+// });
