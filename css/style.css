@@ -634,6 +634,7 @@ header .header_wrapper nav ul li:hover span:nth-child(2) {
 #skills .skills_sec {
   position: relative;
   background-color: #4B4B4B;
+  padding: 2em 0;
 }
 #skills .skills_sec::after {
   content: "";
@@ -722,7 +723,7 @@ header .header_wrapper nav ul li:hover span:nth-child(2) {
   text-align: center;
   color: #FDFAF6;
   font-size: 1.2em;
-  font-family: "Allura", cursive;
+  font-family: adobe-handwriting-ernie, sans-serif;
   letter-spacing: 0.2em;
   font-weight: normal;
 }
@@ -767,6 +768,14 @@ header .header_wrapper nav ul li:hover span:nth-child(2) {
   position: absolute;
   top: 50%;
   right: 0;
+}
+
+#works {
+  position: relative;
+  width: 100%;
+}
+#works .works_sec {
+  background-color: #FDFAF6;
 }
 
 /*# sourceMappingURL=style.css.map */
