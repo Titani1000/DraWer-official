@@ -11,6 +11,16 @@ $mFontE: 'Righteous', cursive; //メインフォント主に英語部分
 $bFontJ: 'Roboto', sans-serif; //ベースフォント主に日本語部分
 $afontE: 'Allura', cursive;//カテゴリー部分の手書き体
 
+// 各セクションの汎用タイトル セットCSS
+@mixin sec_ttl {
+  position: relative;
+  font-size: 3em;
+  font-family: $mFontE;
+  display: inline-block;
+  line-height: 1.2em;
+  letter-spacing: 0.1em;
+  margin-bottom: 1em;
+}
 
 // ハンバーガーメニューkeyframes
 @keyframes MenuAnime {
