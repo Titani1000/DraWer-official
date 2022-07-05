@@ -787,10 +787,19 @@ header .header_wrapper nav ul li:hover span:nth-child(2) {
   content: "";
   background: #FDFAF6;
   width: 80%;
-  height: 100%;
+  height: 60%;
   position: absolute;
   top: 0;
   left: 0;
+}
+#works .works_sec::after {
+  content: "";
+  background: #4B4B4B;
+  width: 85%;
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 #works .works_sec .sec_ttl {
   text-align: center;
@@ -812,6 +821,72 @@ header .header_wrapper nav ul li:hover span:nth-child(2) {
   background-color: #4B4B4B;
   width: 50%;
   height: 3px;
+}
+#works .works_sec .works_content {
+  width: 100%;
+  height: auto;
+  margin: 3em 0;
+}
+#works .works_sec .works_content ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+#works .works_sec .works_content ul li {
+  position: relative;
+  width: 100%;
+  display: flex;
+  z-index: 5;
+}
+#works .works_sec .works_content ul li:nth-child(even) {
+  flex-direction: row-reverse;
+}
+#works .works_sec .works_content ul li:nth-child(even) .works_txt {
+  color: #FDFAF6;
+}
+#works .works_sec .works_content ul li .works_img {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  margin: 0 10em 0 5em;
+}
+#works .works_sec .works_content ul li .works_img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+#works .works_sec .works_content ul li .works_img span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #FDFAF6;
+  font-size: 2em;
+  font-family: "Righteous", cursive;
+  letter-spacing: 0.1em;
+}
+#works .works_sec .works_content ul li .works_txt {
+  position: relative;
+}
+#works .works_sec .works_content ul li .works_txt .works_ttl {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin: 2em 0 1em;
+}
+#works .works_sec .works_content ul li .works_txt .works_ttl h3 {
+  font-size: 2em;
+  line-height: 1.2em;
+}
+#works .works_sec .works_content ul li .works_txt .works_ttl h3 span {
+  display: block;
+  font-family: "Righteous", cursive;
+}
+#works .works_sec .works_content ul li .works_txt .explanation h4 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+#works .works_sec .works_content ul li .works_txt .explanation p {
+  font-size: 1em;
+  line-height: 1.8em;
 }
 
 /*# sourceMappingURL=style.css.map */

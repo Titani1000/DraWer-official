@@ -655,10 +655,19 @@
       content: '';
       background: $mColor;
       width: 80%;
-      height: 100%;
+      height: 60%;
       position: absolute;
       top: 0;
       left: 0;
+    }
+    &::after {
+      content: '';
+      background: $bColor;
+      width: 85%;
+      height: 50%;
+      position: absolute;
+      bottom: 0;
+      right: 0;
     }
 
     .sec_ttl {
@@ -675,7 +684,83 @@
           height: 3px;
         }
       }
+    }
 
+    // works中身のコンテンツ部分のCSS
+    .works_content {
+      width: 100%;
+      height: auto;
+      margin: 3em 0;
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          position: relative;
+          width: 100%;
+          display: flex;
+          // justify-content: center;
+          z-index: 5;
+        // 偶数番目のコンテンツ要素のCSS
+          &:nth-child(even) {
+            flex-direction: row-reverse;
+            .works_txt {
+              color: $mColor;
+            }
+          }
+          // コンテンツ中身の画像CSS
+          .works_img {
+            position: relative;
+            width: 20%;
+            height: 100%;
+            margin: 0 10em 0 5em;
+            img {
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+            }
+            // 画像左下のサブタイトル
+            span {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              color: $mColor;
+              font-size: 2em;
+              font-family: $mFontE;
+              letter-spacing: 0.1em;
+            }
+          }
+
+          // works中身のテキスト部分
+          .works_txt {
+            position: relative;
+            .works_ttl {
+              display: flex;
+              align-items: end;
+              justify-content: space-between;
+              margin: 2em 0 1em;
+              h3 {
+                font-size: 2em;
+                line-height: 1.2em;
+                span {
+                  display: block;
+                  font-family: $mFontE;
+                }
+              }
+            }
+            .explanation {
+              h4 {
+                font-size: 1.5em;
+                margin-bottom: 1em;
+              }
+              p {
+                font-size: 1em;
+                line-height: 1.8em;
+              }
+            }
+          }
+        }
+        
+      }
     }
   }
 }
