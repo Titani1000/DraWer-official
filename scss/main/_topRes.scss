@@ -1,0 +1,642 @@
+@use "../part/drawer" as *;
+@use "../main/breakpoint" as *;
+
+// トップファーストビュー部分のレスポンシブ要素
+// トップ部分レスポンシブ1080pxPC版
+@include pc {
+  #top {
+    .top_sec {
+
+      // トップメイン左側のカード要素
+      .top_card {
+        flex-basis: 50%;
+        padding: 2em;
+        left: 8%;
+
+        h2 {
+          font-size: 2em;
+          margin-bottom: 1em;
+        }
+
+        p {
+          font-size: 1em;
+          color: $sColorG;
+        }
+      }
+
+      // トップメイン右側の画像要素
+      .top_view {
+        width: 56%;
+        margin-right: 1em;
+      }
+    }
+
+    .top_character {
+      left: 3%;
+    }
+  }
+}
+
+// トップ部分レスポンシブタブレット版780px~
+@include tab {
+  #top {
+    .top_sec {
+
+      // トップメイン左側のカード要素
+      .top_card {
+        position: absolute;
+        bottom: 3%;
+        left: 36%;
+        flex-basis: 50%;
+        padding: 1.5em;
+
+        h2 {
+          font-size: 2em;
+          margin-bottom: 0.5em;
+        }
+
+        p {
+          font-size: 1em;
+          color: $sColorG;
+        }
+      }
+
+      // トップメイン右側の画像要素
+      .top_view {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .circle_sdl {
+      width: 120px;
+      height: 120px;
+      bottom: 5%;
+      left: 10%;
+
+    i {
+        font-size: 3.6em;
+      }
+
+      p {
+        font-size: 0.5em;
+      }
+    }
+    .top_character {
+      h2 {
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+// トップ部分レスポンシヴスマホ版
+@include sp {
+  #top {
+    .top_sec {
+
+      // トップメイン左側のカード要素
+      .top_card {
+        position: absolute;
+        bottom: 20%;
+        left: 20%;
+        flex-basis: 50%;
+        padding: 1em;
+
+        h2 {
+          font-size: 1.2em;
+          margin-bottom: 0.3em;
+        }
+
+        p {
+          font-size: 0.8em;
+        }
+      }
+
+      // トップメイン右側の画像要素
+      .top_view {
+        width: 96%;
+      }
+    }
+
+    // スクロールダウン要素
+    .circle_sdl {
+      width: 100px;
+      height: 100px;
+      bottom: 5%;
+      left: 5%;
+      i {
+        font-size: 3em;
+      }
+    }
+    .top_character {
+      h2 {
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+
+// 320px以下へのレスポンシブ
+@include spmini {
+  #top {
+    .top_sec {
+
+      // トップメイン左側のカード要素
+      .top_card {
+        position: absolute;
+        bottom: 20%;
+        left: 10%;
+        flex-basis: 50%;
+        padding: 1em;
+      }
+    }
+  }
+}
+
+
+
+
+
+// What`s News部分レスポンシブ
+@include pc {
+#news {
+
+  .news_sec {
+    padding: 2em;
+
+    h2 {
+      font-size: 2em;
+    }
+
+    // ポートフォリオリスト
+    .Portfolio_list {
+      .News_list {
+        li {
+          // 画像右下の丸矢印
+            .pf_img {
+            .circle {
+                bottom: -8%;
+                right: -10%;
+                width: 70px;
+                height: 70px;
+                i {
+                  font-size: 36px;
+                }
+              }
+            }
+            .pf_txt {
+              h3 {
+                font-size: 1em;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// レスポンシヴタブレット
+@include tab {
+  #news {
+  
+      .news_sec {
+        padding: 2em;
+  
+        h2 {
+          font-size: 2em;
+        }
+  
+        // ポートフォリオリスト
+        .Portfolio_list {
+          .News_list {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 0 0 1em;
+            scroll-behavior: smooth;
+            justify-content: unset;
+            li {
+              height: 100%;
+              flex: 26% 0 0;
+              scroll-snap-align: center;
+            }
+          }
+        }
+      }
+    }
+}
+
+// スマホ版レスポンシブ
+@include sp {
+  #news {
+    padding: 3em 0 0 0;
+  
+      .news_sec {
+        padding: 2em 1em;
+  
+        // ポートフォリオリスト
+        .Portfolio_list {
+          .News_list {
+            li {
+              height: 100%;
+              flex: 0 0 60%;
+              margin: 0 1.5em 0 0;
+            }
+          }
+        }
+      }
+    }
+}
+
+
+
+
+
+// ABOUT部分のパソコン版レスポンシブ
+@include pc {
+  // ABOUT
+  #about {
+    .about_sec {
+      padding: 3.6em 0 4em;
+
+      // 背景装飾文字要素
+      &::after {
+        font-size: 3em;
+        letter-spacing: 0.08em;
+        bottom: -3%;
+        z-index: 1;
+      }
+
+      // Aboutテキスト部分
+      .about_lead {
+        .sec_ttl {
+          margin-bottom: 2.5em;
+          
+          h3 {
+            letter-spacing: 0.1em;
+          }
+        }
+
+        .about_txt {
+          line-height: 2em;
+        }
+      }
+
+      // 画像部分CSS
+      .about_img {
+        width: 43%;
+        top: 80px;
+      }
+    }
+  }
+}
+
+// ABOUT部分タブレット版レスポンシブ
+@include tab {
+#about {
+    .about_sec {
+      padding: 1em 0 4em;
+
+      // 背景装飾文字要素
+      &::after {
+        bottom: 3%;
+      }
+
+      // Aboutテキスト部分
+      .about_lead {
+        width: 90%;
+        .sec_ttl {
+          margin-bottom: 2em;
+          h2 {
+            font-size: 2em;
+            &::after {
+              width: 80px;
+              right: -80%;
+            }
+          }
+          h3 {
+            font-size: 1.2em
+          }
+        }
+
+        .about_txt {
+          line-height: 2em;
+          font-size: 0.8em
+        }
+      }
+
+      // 画像部分CSS
+      .about_img {
+        width: 60%;
+        top: 0;
+      }
+    }
+  }
+}
+
+// ABOUT部分スマホ版版レスポンシブ
+@include sp {
+#about {
+    .about_sec {
+      padding: 1em 0 4em;
+
+      // 背景装飾文字要素
+      &::after {
+        bottom: 0%;
+        left: 2%;
+        font-size: 2em;
+      }
+
+      // Aboutテキスト部分
+      .about_lead {
+        width: 96%;
+
+        .sec_ttl {
+          margin-bottom: 2em;
+          h2 {
+              font-size: 2em;
+              &::after {
+                width: 70px;
+                right: -70%;
+                height: 2px;
+              }
+            }
+            h3 {
+              font-size: 1em;
+            }
+        }
+
+        .about_txt {
+          line-height: 1.8em;
+        }
+      }
+
+      // 画像部分CSS
+      .about_img {
+        width: 86%;
+        top: 10px;
+      }
+    }
+  }
+}
+
+
+
+
+
+// SERVICE部分のレスポンシブパソコン版
+@include pc {
+#service {
+
+    .service_sec {
+      background: $mColor;
+      padding: 8em 0;
+      width: 100%;
+
+      // サービス見出しテキスト部分
+      .sec_ttl {
+        text-align: center;
+
+        h2 {
+          position: relative;
+          font-size: 3em;
+          font-family: $mFontE;
+          display: inline-block;
+          line-height: 1.2em;
+          letter-spacing: 0.1em;
+          margin-bottom: 1em;
+
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: 15%;
+            width: 70%;
+            height: 3px;
+            background: $bColor;
+          }
+        }
+      }
+
+      // サービスコンテンツ要素
+      .service_content {
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        .service_list {
+          ul {
+
+            li {
+              width: 47%;
+              // ２番目だけ下に下げる
+              &:nth-child(2) {
+                top: 0;
+              }
+              &:nth-child(even) {
+                top: 30px;
+              }
+
+              // サービス中身画像
+              .service_img {
+                width: 80%;
+              }
+
+              // サービステキスト部分
+              .service_card_txt {
+                width: 70%;
+                line-height: 1.5em;
+                text-align: center;
+
+                h3 {
+                  position: relative;
+                  font-size: 2em;
+                  font-family: $mFontE;
+                  margin-bottom: 1em;
+
+                  &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -50%;
+                    left: 35%;
+                    margin: 0 auto;
+                    background-color: $bColor;
+                    width: 30%;
+                    height: 3px;
+                  }
+                }
+
+                p {
+                  font-size: 0.8em;
+                  line-height: 1.2em;
+                  font-family: $bFontJ;
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// SERVICE部分のレスポンシブタブレット版
+@include tab {
+  #service {
+
+    .service_sec {
+      background: $mColor;
+      padding: 8em 0;
+      width: 100%;
+
+      // サービス見出しテキスト部分
+      .sec_ttl {
+        text-align: center;
+
+        h2 {
+          font-size: 2em;
+          font-family: $mFontE;
+          display: inline-block;
+          line-height: 1.2em;
+          letter-spacing: 0.1em;
+          margin-bottom: 1em;
+
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: 15%;
+            width: 70%;
+            height: 3px;
+            background: $bColor;
+          }
+        }
+      }
+        
+      // サービスコンテンツ要素
+      .service_content {
+        .service_list {
+          ul {
+            li {
+              width: 47%;
+              padding: 1em 0;
+
+              // サービス中身画像
+              .service_img {
+                width: 80%;
+                margin: 0 auto;
+              }
+
+              // サービステキスト部分
+              .service_card_txt {
+                width: 70%;
+                line-height: 1.5em;
+                text-align: center;
+                margin: 0 auto;
+                h3 {
+                  position: relative;
+                  font-size: 2em;
+                  font-family: $mFontE;
+                  margin-bottom: 1em;
+                }
+              }
+
+              // 疑似要素 右下ナンバー装飾
+              .Card_No {
+                font-size: 2em;
+                width: 60px;
+                height: 60px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// SERVICE部分のレスポンシブスマホ版
+@include sp {
+  #service {
+    &::before {
+      height: 6%;
+    }
+
+    .service_sec {
+
+      // サービス見出しテキスト部分
+      .sec_ttl {
+        text-align: center;
+
+        h2 {
+          font-size: 2em;
+        }
+        p {
+          font-size: 0.8em;
+        }
+      }
+
+      // サービスコンテンツ要素
+      .service_content {
+        .service_list {
+          ul {
+            li {
+              width: 92%;
+              margin: 2em 0.5em;
+            &:nth-child(even) {
+                top: 0px;
+                margin-left: auto;
+              }
+              &:nth-child(odd) {
+                margin-right: auto;
+              }
+
+              // サービス中身画像
+              .service_img {
+                width: 80%;
+                margin: 0 auto;
+              }
+
+              // サービステキスト部分
+              .service_card_txt {
+
+                h3 {
+                  font-size: 1.5em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// SERVICE部分スマホ版最小版レスポンシブ
+@include spmini {
+#service {
+    .service_sec {
+
+      // サービスコンテンツ要素
+      .service_content {
+        .service_list {
+          ul {
+            li {
+              width: 96%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+@include pc {
+  
+}

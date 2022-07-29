@@ -1,0 +1,29 @@
+// 端末ごとのブレイクポイント設定
+$pc: 1080px;
+$tab: 780px;
+$sp: 480px;
+$spmini: 320px;
+
+@mixin pc {
+  @media screen and (max-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+@mixin spmini {
+  @media screen and (max-width: ($spmini)) {
+      @content;
+    }
+}

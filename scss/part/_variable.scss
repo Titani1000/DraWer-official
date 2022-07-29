@@ -1,4 +1,5 @@
 @use "drawer" as *;
+@use  "../main/breakpoint" as *;
 
 // ヘッダー部分のCSS
 header {
@@ -15,11 +16,13 @@ header {
     width: 100%;
     background-color: $bColor;
     padding: 1em 0;
+    height: 60px;
 
     // ヘッダー右側ロゴ部分
     .header_logo {
       position: fixed;
       left: 5%;
+      z-index: 100;
 
       h1 {
         font-size: 3em;
@@ -73,6 +76,85 @@ header {
             transform: translate(-50%, 0);
           }
         }
+      }
+    }
+  }
+}
+// ヘッダーレスポンシブ パソコン1080px
+@include tab {
+header {
+
+.header_wrapper {
+    padding: 1em 0;
+    // ヘッダー右側ロゴ部分
+    .header_logo {
+      left: 3%;
+
+      h1 {
+        font-size: 3em;
+        font-family: $mFontE;
+        color: $mColor;
+        letter-spacing: .1em;
+      }
+    }
+
+    // ヘッダーメニュー部分
+    nav {
+      width: 60%;
+
+      ul {
+        font-size: 1em;
+
+        li {
+          a {
+            font-family: $mFontE;
+            position: relative;
+            color: $mColor;
+            display: inline-block;
+            transition: .3s;
+            padding: 1em 3em;
+            vertical-align: bottom;
+            overflow: hidden;
+
+            span {
+              position: absolute;
+              left: 50%;
+              top: 0;
+              transition: all .5s;
+              transform: translate(-50%, 0);
+              display: block;
+              opacity: 1;
+              white-space: nowrap;
+
+              &:nth-child(2) {
+                opacity: 0;
+                transform: translate(-50%, 100%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}
+
+@include sp {
+header {
+  .header_wrapper {
+    padding: 1em 0;
+
+    // ヘッダー右側ロゴ部分
+    .header_logo {
+      left: 3%;
+    h1 {
+        font-size: 2.4em;
+      }
+    }
+    // ヘッダーメニュー部分
+    nav {
+      width: 100%;
+      display: none;
       }
     }
   }
@@ -193,10 +275,93 @@ header {
       transform: scale(50);
     }
   }
-
 }
 
+// フッター部分のCSS
+footer {
+  position: relative;
+  width: 100%;
+  .footer_wrapper {
+    position: relative;
+    padding: 3em 0;
+    // margin-top: 3em;
+    .f_ac {
+      position: absolute;
+      top: -30%;
+      left: 5%;
+      background: #666666;
+      width: 140px;
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      span {
+        color: $mColor;
+        font-size: 2em;
+        font-family: $mFontE;
+        letter-spacing: 0.1em;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -21%;
+        border-right: 30px solid transparent;
+        border-bottom: 45px solid #666666;
+      }
+    }
 
+
+    // フッターリストはここから
+    .footer_list {
+      align-items: center;
+      width: 100%;
+      padding: 1em 0;
+      ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+          margin: 0 1em;
+          a {
+            font-family: $mFontE;
+            position: relative;
+            color: $mColor;
+            display: inline-block;
+            transition: .3s;
+            padding: 1em 3em;
+            vertical-align: bottom;
+            overflow: hidden;
+          }
+          span {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transition: all .5s;
+            transform: translate(-50%, 0);
+            display: block;
+            opacity: 1;
+            white-space: nowrap;
+
+            &:nth-child(2) {
+              opacity: 0;
+              transform: translate(-50%, 100%);
+            }
+          }
+            &:hover span:nth-child(1) {
+              opacity: 0;
+              transform: translate(-50%, -100%);
+            }
+  
+            &:hover span:nth-child(2) {
+              opacity: 1;
+              transform: translate(-50%, 0);
+            }
+          }
+        }
+      }
+    }
+  }
 
 
 // 装飾要素ベース部分はここで作成

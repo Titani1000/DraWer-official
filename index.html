@@ -22,7 +22,7 @@
  <!-- SCSS読み込み変換用CSSファイル -->
  <link rel="stylesheet" type="text/css" href="./css/style.css">
  <!-- 外部リンクCDN -->
-<link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+ <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
   <!-- フォント追加 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,10 +31,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/xno5jqp.css">
   <!-- アイコン追加 font-awesomeCDN -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-  <script src="https://kit.fontawesome.com/eea364082e.js" crossorigin="anonymous"></script>
-  <!-- fontawesomeアイコン追加CDNリンク -->
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <script src="https://kit.fontawesome.com/8bc100d9f8.js" crossorigin="anonymous"></script>
  </head>
  <body>
  <!----- header----->
@@ -84,9 +82,13 @@
    <!-- First-View -->
    <section id="top">
      <div class="top_sec">
+      <!-- トップアニメーションスライドショー -->
       <div class="top_view">
-        <img src="./image/top/slide-one.jpg" alt="トップメイン画像">
-      </div>
+        <div class="slide_wrapper js_animate">
+          <div class="slide_item"><img class="hero_slide" src="./image/top/slide-one.jpg" alt=""></div>
+        </div>
+        </div>
+      <!-- 左側の白色カード -->
       <div class="top_card">
         <h2>We have draw your ideales</h2>
         <p>We had making your happen</p>
@@ -96,7 +98,7 @@
       <h2>DRAWER</h2>
      </div>
      <div class="circle_sdl">
-      <span class="triangle"></span>
+      <i class="fa-solid fa-play"></i>
       <p>SCROLL</p>
      </div>
    </section>
@@ -106,61 +108,56 @@
      <div class="news_sec">
        <h2>What's News</h2>
        <div class="Portfolio_list">
-          <!-- <input type="radio" name="slideshow" id="s-1" checked>
-          <input type="radio" name="slideshow" id="s-2">
-          <input type="radio" name="slideshow" id="s-3">
-          <input type="radio" name="slideshow" id="s-4">
-          <input type="radio" name="slideshow" id="s-5"> -->
-         <ul class="New_list">
+         <ul class="News_list">
            <li>
              <a href="#">
                <div class="pf_img">
-                 <img src="./image/works/kamado.png" alt="竈門祭りポートフォリオ">
-                 <div class="circle"><span class="right_arrow"></span></div>
+                 <div class="zoomin">
+                  <span class="mask"><img src="./image/works/kamado.png" alt="竈門祭りポートフォリオ"></span>
+                 </div>
+                 <div class="circle"><i class="fa-solid fa-play"></i></div>
                 </div>
-               <p>竈門祭りポートフォリオ</p>
+                <div class="pf_txt"><h3>竈門祭り</h3></div>
                </a>
             </li>
 
            <li>
             <a href="#">
               <div class="pf_img">
-                <img src="./image/works/kamado.png" alt="竈門祭りポートフォリオ">
-                <div class="circle"><span class="right_arrow"></span></div>
+                <div class="zoomin">
+                  <span class="mask"><img src="./image/works/remark.png" alt="IT企業のコーポレートサイト"></span>
+                </div>
+                <div class="circle"><i class="fa-solid fa-play"></i></div>
               </div>
-              <p>竈門祭りポートフォリオ</p>
+              <div class="pf_txt"><h3>株式会社ReMarK</h3></div>
             </a>
            </li>
 
            <li>
             <a href="#">
               <div class="pf_img">
-                <img src="./image/works/kamado.png" alt="竈門祭りポートフォリオ">
-                <div class="circle"><span class="right_arrow"></span></div>
+                <div class="zoomin">
+                  <span class="mask"><img src="./image/works/kommit.png" alt="竈門祭りポートフォリオ"></span>
+                </div>
+                <div class="circle"><i class="fa-solid fa-play"></i></div>
               </div>
-              <p>竈門祭りポートフォリオ</p>
+              <div class="pf_txt"><h3>KOmmit</h3></div>
             </a>
            </li>
 
            <li>
             <a href="#">
               <div class="pf_img">
-                <img src="./image/works/kamado.png" alt="竈門祭りポートフォリオ">
-                <div class="circle"><span class="right_arrow"></span></div>
+                  <div class="zoomin">
+                    <span class="mask"><img src="./image/works/amano-dental.png" alt="竈門祭りポートフォリオ"></span>
+                  </div>
+                <div class="circle"><i class="fa-solid fa-play"></i></div>
               </div>
-              <p>竈門祭りポートフォリオ</p>
+              <div class="pf_txt"><h3>天野歯科</h3></div>
             </a>
            </li>
+
          </ul>
-
-         <!-- <span class="right"></span> -->
-        <div class="list_label">
-          <label for="s-1"></label>
-          <label for="s-2"></label>
-          <label for="s-3"></label>
-          <label for="s-4"></label>
-          <label for="s-5"></label>
-        </div>
        </div>
      </div>
    </section>
@@ -176,7 +173,7 @@
         </div>
         <!-- 下記分は後で必ず変えること↓ -->
         <div class="about_txt">
-          <p>私はWeb制作系フリーランスとして、規模・業界問わずお客様が抱えるWeb課題を解決するパートナーを目指しています。</p>
+          <p>私はWeb制作系フリーランスとして、規模・業界問わずお客様が抱えるWeb課題を解決するパートナーを目指しています。
           「お客様の未来が私たちの明日へ。」それがLostaが持つミッションです。<br>
           ITが普及した現代においてなくてはならないWebを通じて、お客様が抱えている課題を解決し、持続的な成長へと導いていきます。</p>
         </div>
@@ -347,27 +344,45 @@
                   お知らせの中身の詳細ページ一枚の<br>
                   計三枚をWordPress化に対応し、サーバー上にアップして納品完了となりました。</p>
               </div>
+              <div class="button">
+                <div class="works_btn">
+                  <a href="#"><span><i class="fa-brands fa-internet-explorer"></i>サイトページへ</span>
+                  <span><i class="fa-brands fa-internet-explorer"></i>サイトページへ</span></a>
+                </div>
+                <div class="works_btn"><a href="#"><span><i class="fa-brands fa-github"></i>Gitへ</span>
+                <span><i class="fa-brands fa-github"></i>Gitへ</span></a>
+              </div>
+              </div>
             </div>
           </li>
 
           <li>
             <div class="works_img">
               <img src="./image/works/remark.png" alt="竈門祭りファーストビュー画像">
-              <span>Remark</span>
+              <span>ReMarK</span>
             </div>
             <div class="works_txt">
               <div class="works_ttl">
-                <h3><span>Portfolio</span>架空の地元宣伝お祭りサイト</h3>
+                <h3><span>Portfolio</span>IT企業のコーポレートサイト</h3>
                 <span class="period">作成期間 1.5週間</span>
               </div>
               <div class="explanation">
-                <h4>竈門祭り</h4>
+                <h4>株式会社ReMarK</h4>
                 <p>スクールの模擬案件にて作成した初の本格的なサイトになります。<br>
-                作成期間は1.5週間でページ数は、<br>
+                作成期間は2週間でページ数は、<br>
                 TOPページ一枚<br>
                 お知らせ一覧ページ一枚<br>
                 お知らせの中身の詳細ページ一枚の<br>
                 計三枚をWordPress化に対応し、サーバー上にアップして納品完了となりました。</p>
+              </div>
+              <div class="button">
+                <div class="works_btn">
+                  <a href="#"><span><i class="fa-brands fa-internet-explorer"></i>サイトページへ</span>
+                    <span><i class="fa-brands fa-internet-explorer"></i>サイトページへ</span></a>
+                </div>
+                <div class="works_btn"><a href="#"><span><i class="fa-brands fa-github"></i>Gitへ</span>
+                    <span><i class="fa-brands fa-github"></i>Gitへ</span></a>
+                </div>
               </div>
             </div>
           </li>
@@ -377,12 +392,65 @@
   </section>
 
   <section id="contact">
-    <div class="sec_ttl">
-      <h2>CONTACT</h2>
-      <p>制作のご依頼、ご相談、お見積もりなど、お気軽にお問い合わせください。
-      その他にもご質問等ございましたらお問い合わせ内容の確認後、折り返しご連絡させていただきます。</p>
-    </div>
+    <div class="contact_sec">
+      <div class="sec_ttl">
+        <h2>CONTACT</h2>
+          <p>制作のご依頼、ご相談、お見積もりなど、お気軽にお問い合わせください。<br>
+            その他にもご質問等ございましたらお問い合わせ内容の確認後、折り返しご連絡させていただきます。</p>
+        </div>
 
+        <div class="contact_content">
+          <div class="cf_mail">
+            <form method="post" action="mail.php">
+              <table class="form_tbl">
+                <tr>
+                  <th>お問い合わせ項目</th>
+                  <td class="form_select">
+                    <div class="radio_wrapper">
+                      <label><input name="contact_type" type="radio" id="radio_request" checked>
+                        <label for="radio_request">制作のご依頼</label>
+                      </label>
+                      <label><input name="contact_type" type="radio" id="radio_request">
+                        <label for="radio_request">お見積りやご相談</label>
+                      </label>
+                      <label><input name="contact_type" type="radio" id="radio_request">
+                        <label for="radio_request">その他</label>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th>お名前</th>
+                  <td><input type="name" name="お名前" class="form_item"></td>
+                </tr>
+                <tr>
+                  <th>メールアドレス</th>
+                  <td><input type="email" name="メール" class="form_item"></td>
+                </tr>
+                <tr>
+                  <th>電話番号</th>
+                  <td><input type="tel" name="電話" class="form_item"></td>
+                </tr>
+                <tr>
+                  <th>お問い合わせ内容</th>
+                  <td><textarea name="お問い合わせ内容" class="form_textarea"></textarea></td>
+                </tr>
+              </table>
+            </form>
+            <div class="contact_btn">
+              <a href="#" class="send"><span><i class="fa-solid fa-paper-plane"></i>SEND</span><span><i
+                    class="fa-solid fa-paper-plane"></i>SEND</span></a>
+            </div>
+          </div>
+          <div class="cf_no">
+            <div class="circle_No"><span class="No border_bottom">01</span><span class="character">ENTER</span></div>
+            <div class="circle_No"><span class="No border_bottom">02</span><span class="character">CONFIRM</span></div>
+            <div class="circle_No"><span class="No">03</span><span class="character">REPLY</span></div>
+          </div>
+        </div>
+
+      </div>
   </section>
 
  </main>
@@ -390,7 +458,25 @@
  
  <!----- footer ----->
  <footer id="footer">
-
+  <div class="footer_wrapper">
+    <div class="f_ac">
+      <span>DraWer</span>
+    </div>
+    <nav class="footer_list">
+      <ul>
+        <li><a href="#top"><span>TOP</span><span>TOP</span></a></li>
+        <li><a href="#about"><span>ABOUT</span><span>ABOUT</span></a></li>
+        <li><a href="#skills"><span>SKILLS</span><span>SKILLS</span></a></li>
+        <li><a href="#works"><span>WORKS</span><span>WORKS</span></a></li>
+        <li><a href="#contact"><span>CONTACT</span><span>CONTACT</span></a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="icon_list">
+    <nav>
+      <ul><li></li></ul>
+    </nav>
+  </div>
  </footer>
  <!----- /footer ----->
  </body>

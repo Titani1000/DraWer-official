@@ -1,4 +1,5 @@
 @use "../part/drawer" as *;
+@use  "../main/breakpoint" as *;
 
 // トップメインヴュー部分のCSS
 #top {
@@ -19,7 +20,7 @@
     .top_card {
       position: relative;
       left: 10%;
-      width: 40%;
+      flex-basis: 40%;
       background-color: $mColor;
       padding: 2.4em;
       font-family: $mFontE;
@@ -46,16 +47,28 @@
 
     // トップメイン右側の画像要素
     .top_view {
-      position: relative;
       width: 56%;
-      img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        vertical-align: bottom;
+      .slide_wrapper {
+        position: relative;
+        overflow: hidden;
+        .slide_item {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          transition: 1.6s;
+          .hero_slide {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+          }
+          // アニメーション左下から伸びるアニメーション
+        }
+      }
       }
     }
   }
+
     .top_character {
       position: absolute;
       top: 45%;
@@ -69,24 +82,15 @@
         font-family: $mFontE;
         writing-mode: vertical-rl;
         text-orientation: upright;
-        letter-spacing: 0.1em;
+        // letter-spacing: 0.1em;
         &::before {
-          content: '';
-          width: 2px;
-          height: 40px;
-          background: $mColor;
+          content: '\f358';
+          color: $mColor;
+          font-family: "Font Awesome 6 Free";
+          font-weight: 900;
           position: absolute;
-          top: -30%;
-          left: 50%;
-        }
-        &::after {
-          content: '';
-          width: 2px;
-          height: 40px;
-          background: $mColor;
-          position: absolute;
-          bottom: -30%;
-          left: 50%;
+          top: -20%;
+          animation: move-y 1.5s infinite alternate ease-in-out;
         }
       }
     }
@@ -101,17 +105,14 @@
       bottom: 10%;
       left: 15%;
       border-radius: 50%;
-      .triangle {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 60px 35px 0 35px;
-        border-color: $mColor transparent transparent transparent;
-        border-radius: 5px;
+      animation: flip 3.6s ease-in infinite;
+      i {
+        font-size: 70px;
+        color: $mColor;
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) rotate(90deg);
       }
       p {
         font-size: 0.8em;
@@ -122,8 +123,9 @@
         transform: translate(-50%, -50%);
         font-family: $mFontE;
       }
-    }
-}
+  }
+
+
 
 
 
@@ -134,7 +136,6 @@
   margin: 0 auto;
   padding: 5em 0 0 3em;
   line-height: 1;
-  // background: $bColor;
   overflow: hidden;
 
   // 下半分は白色の背景
@@ -150,7 +151,6 @@
 
 
   .news_sec {
-    width: 76%;
     margin-left: auto;
     background-color: $mColor;
     padding: 3em;
@@ -158,7 +158,7 @@
     z-index: 5;
 
     h2 {
-      font-size: 2em;
+      font-size: 3em;
       font-family: $mFontE;
       letter-spacing: 0.1em;
       margin-bottom: 0.5em;
@@ -181,63 +181,86 @@
         cursor: pointer;
       }
       
-      ul {
+      .News_list {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        // overflow-x: auto;
-        // overflow: hidden;
-        // scroll-behavior: smooth;
-        // scroll-snap-type: inline;
 
         li {
-          width: 26%;
+          width: 20%;
           height: auto;
           margin: 0 1.5em;
           scroll-snap-align: center;
           // display: inline-block;
 
+          // 画像部分
           .pf_img {
             display: block;
             position: relative;
             width: 100%;
             height: 100%;
             img {
+              transform: scale(1);
+              transition: .3s ease-in-out;
               width: 100%;
               height: auto;
               object-fit: cover;
+              vertical-align: middle;
             }
+            & .zoomin:hover img,
+            & .zoomin:active img{
+              transform: scale(1.2);
+            }
+            .mask {
+              display: block;
+              overflow: hidden;
+              line-height: 0;
+              border-radius: 5px;
+              border: 2px solid $bColor;
+            }
+            // 画像右下の丸矢印
             .circle {
-              position: relative;
               position: absolute;
-              bottom: -10%;
-              right: -20%;
+              bottom: -5%;
+              right: -10%;
               width: 80px;
               height: 80px;
               background: $bColor;
               border-radius: 50%;
+              cursor: pointer;
+              transform: scale(1);
+              transition: .3s ease-in-out;
+              &:hover {
+                transform: scale(1.2);
+              }
 
-              .right_arrow {
+              i {
                 position: absolute;
                 top: 50%;
-                left: 55%;
-                transform: translate(-50%, -50%) rotate(-90deg);
-                border-color: $mColor transparent transparent transparent;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-width: 40px 20px 0 20px;
-                border-radius: 3px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: $mColor;
+                font-size: 40px;
+                text-shadow: -1px -1px rgba(255, 255, 255, 0.43), 1px 1px rgba(0, 0, 0, 0.49);
               }
+            }
+          }
+          // テキスト部分
+          .pf_txt {
+            margin-top: 0.5em;
+
+            h3 {
+              font-size: 1.5em;
             }
           }
         }
       }
     }
-
   }
 }
+
+
 
 
 
@@ -297,16 +320,17 @@
           }
         }
         h3 {
-          font-size: 1.3em;
+          font-size: 1.5em;
           span {
             font-family: $mFontE;
           }
         }
       }
       .about_txt {
-        font-size: 0.8em;
+        font-size: 1em;
         line-height: 2.5em;
         color: #CCCCCC;
+        z-index: 5;
       }
     }
 
@@ -316,22 +340,6 @@
       width: 40%;
       height: 100%;
       top: 70px;
-
-      &::before,
-      &::after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 100%;
-        border: 1px solid #ddd;
-        background: #fff;
-        border-radius: 2px;
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: -1;
-      }
       img {
         width: 100%;
         height: auto;
@@ -359,7 +367,7 @@
 
   .service_sec {
     background: $mColor;
-    padding: 8em 0;
+    padding: 8em 0 5em;
     width: 100%;
     // margin-top: 5em;
 
@@ -664,9 +672,9 @@
       content: '';
       background: $bColor;
       width: 85%;
-      height: 50%;
+      height: 45%;
       position: absolute;
-      bottom: 0;
+      bottom: 2%;
       right: 0;
     }
 
@@ -706,6 +714,14 @@
             .works_txt {
               color: $mColor;
             }
+            .works_img {
+              span {
+                position: absolute;
+                bottom: 0;
+                right: 2%;
+                text-align: right;
+              }
+            }
           }
           // コンテンツ中身の画像CSS
           .works_img {
@@ -717,14 +733,15 @@
               width: 100%;
               height: auto;
               object-fit: cover;
+              vertical-align: middle;
             }
             // 画像左下のサブタイトル
             span {
               position: absolute;
               bottom: 0;
-              left: 0;
+              left: 2%;
               color: $mColor;
-              font-size: 2em;
+              font-size: 2.3em;
               font-family: $mFontE;
               letter-spacing: 0.1em;
             }
@@ -757,9 +774,242 @@
                 line-height: 1.8em;
               }
             }
+
+            // 作品ページとgitへの移動ボタン
+            .button {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-evenly;
+              margin-top: 3em;
+              .works_btn {
+                background-color: $mColor;
+                border: 1px solid $bColor;
+                text-align: center;
+                a {
+                  padding: 0.5em 0;
+                  font-size: 1em;
+                  display: inline-block;
+                  transition: .3s;
+                  text-align: center;
+                  width: 200px;
+                  height: 40px;
+                  vertical-align: bottom;
+                  overflow: hidden;
+                  position: relative;
+
+                  span {
+                    position: absolute;
+                    left: 50%;
+                    transition: all .5s;
+                    transform: translate(-50%, 0);
+                    display: block;
+                    opacity: 1;
+                    white-space: nowrap;
+                  
+                    &:nth-child(2) {
+                      opacity: 0;
+                      transform: translate(-50%, 100%);
+                    }
+                  }
+                  // アイコン部分
+                  i {
+                    font-size: 1.4em;
+                    margin: 0 0.3em;
+                    vertical-align: top;
+                  }
+                  &:hover span:nth-child(1) {
+                    opacity: 0;
+                    transform: translate(-50%, -100%);
+                  }
+
+                  &:hover span:nth-child(2) {
+                    opacity: 1;
+                    transform: translate(-50%, 0);
+                  }
+                }
+                
+              }
+            }
           }
         }
         
+      }
+    }
+  }
+}
+
+
+// CONTACT中身のコンテンツ部分
+#contact {
+  position: relative;
+  background: #fff;
+  width: 100%;
+  padding-bottom: 5em;
+  .contact_sec {
+    width: 80%;
+    background-color: $mColor;
+    margin: 0 auto;
+    padding: 3em;
+    // コンタクトタイトル部分
+    .sec_ttl {
+      text-align: center;
+      h2 {
+        @include sec_ttl;
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -5%;
+          left: 25%;
+          background-color: $bColor;
+          width: 50%;
+          height: 3px;
+        }
+      }
+    }
+
+    // コンタクトフォーム中身
+    .contact_content {
+      position: relative;
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .cf_mail {
+        width: 100%;
+        
+        form {
+          text-align: left;
+          .form_tbl {
+            width: 100%;
+            margin: 2em 0;
+            max-width: 640px;
+            tr {
+              height: 3.5em;
+              vertical-align: top;
+              td {
+                .form_item {
+                  width: 100%;
+                  background: #fff;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  padding: 3px;
+                }
+                // テキストエリア部分
+                .form_textarea {
+                  width: 100%;
+                  background: #fff;
+                  border: 1px solid #ccc;
+                  border-radius: 5px;
+                  height: 10em;
+                  padding: 3px;
+                }
+              }
+              // ラジオボタン部分
+              .form_select {
+                .radio_wrapper {
+                  display: flex;
+                  justify-content: space-evenly;
+                  align-items: center;
+                  input {
+                    cursor: pointer;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .contact_btn {
+          text-align: center;
+          // display: inline-block;
+          .send {
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            position: relative;
+            color: $mColor;
+            display: inline-block;
+            transition: .3s;
+            vertical-align: bottom;
+            overflow: hidden;
+            background: $bColor;
+            span {
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transition: all .5s;
+                transform: translate(-50%, 0);
+                display: block;
+                opacity: 1;
+                white-space: nowrap;
+                letter-spacing: 0.1em;
+
+                i {
+                  margin-right: 5px;
+                }
+            
+                &:nth-child(2) {
+                  opacity: 0;
+                  transform: translate(-50%, 100%);
+                }
+              }
+            &:hover span:nth-child(1) {
+              opacity: 0;
+              transform: translate(-50%, -100%);
+            }
+
+            &:hover span:nth-child(2) {
+              opacity: 1;
+              transform: translate(-50%, 0);
+            }
+          }
+        }
+      }
+
+      .cf_no {
+        width: 20%;
+        min-height: 400px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .circle_No {
+          display: flex;
+          align-items: center;
+          .No {
+            position: relative;
+            background: $bColor;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            color: $mColor;
+            font-family: adobe-handwriting-ernie, sans-serif;
+            font-size: 1.5em;
+            margin-right: 0.3em;
+            z-index: 5;
+          }
+          .character {
+            font-size: 1em;
+            font-family: $mFontE;
+            letter-spacing: 0.1em;
+            font-weight: normal;
+          }
+        }
+        .border_bottom::after {
+          content: '';
+          width: 5px;
+          height: 6vw;
+          background: $bColor;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          z-index: 0;
+        }
       }
     }
   }

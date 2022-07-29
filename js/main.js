@@ -44,9 +44,18 @@ $(".menu_nav a").click(function () {
 
 
 
-// document.querySelectorAll('.right_arrow').forEach(elm => {
-// 	elm.onclick = function () {
-// 		let div = this.parentNode.querySelector('.Portfolio_list ul');
-// 		div.scrollLeft += (div.clientWidth / 2);
-// 	};
+// スライドショー一定間隔ごとにCSSアニメーションを繰り返す
+// $(function(){
+//   $(".slide_wrapper .slide_item").css({"position":"relative"});
+//   $(".slide_wrapper .slide_item").hide().css({"position":"absolute"});
+//   $(".slide_wrapper .slide_item:first").addClass("slide");
+//   $(".slide_wrapper .slide_item:nth-child(2)").css({"display":"block"});
+//   setInterval(function(){
+//     var $active = $(".slide_wrapper .slide_item.slide");
+//     var $next = $active.next(".slide_item").length?$active.next(".slide_item"):$(".slide_wrapper .slide_item:first");
+//     var $nextnext = $next.next(".slide_item");
+//     $active.fadeOut(0).removeClass("slide");
+//     $next.show().addClass("slide");
+//     $nextnext.css({"display":"block"});
+//   },5000);
 // });
