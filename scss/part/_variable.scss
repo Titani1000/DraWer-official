@@ -277,17 +277,33 @@ header {
   }
 }
 
+// スマホ版ハンバーガーメニューレスポンシブスマホ版380px～
+@include sp {
+  #header .menu_nav ul {
+    display: block;
+    li {
+      margin: 2em 0;
+    }
+  }
+}
+
+
+
+
+
+
 // フッター部分のCSS
 footer {
   position: relative;
   width: 100%;
+  text-align: center;
   .footer_wrapper {
     position: relative;
-    padding: 3em 0;
+    padding: 4em 0 2em;
     // margin-top: 3em;
     .f_ac {
       position: absolute;
-      top: -30%;
+      top: -18%;
       left: 5%;
       background: #666666;
       width: 140px;
@@ -315,23 +331,25 @@ footer {
     // フッターリストはここから
     .footer_list {
       align-items: center;
-      width: 100%;
+      width: 70%;
       padding: 1em 0;
+      margin: 0 auto;
       ul {
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
+        flex-wrap: wrap;
         li {
           margin: 0 1em;
           a {
             font-family: $mFontE;
             position: relative;
             color: $mColor;
-            display: inline-block;
-            transition: .3s;
+            transition: all .5s;
             padding: 1em 3em;
-            vertical-align: bottom;
             overflow: hidden;
+            vertical-align: bottom;
+            font-size: 1.5em;
           }
           span {
             position: absolute;
@@ -358,10 +376,124 @@ footer {
               transform: translate(-50%, 0);
             }
           }
+          
+        }
+      }
+      // ここからフッターアイコンリスト
+      .icon_list {
+        position: relative;
+        width: 50%;
+        margin: 1em auto 0;
+
+        nav {
+          ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            li {
+              margin: 0 2em;
+              text-align: center;
+              a {
+                font-size: 1.8em;
+                background-color: #565656;
+                color: $mColor;
+                padding: 0.5em;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                box-sizing: border-box;
+                border: 1px solid transparent;
+                outline: 1px solid;
+                outline-color: #878787;
+                outline-offset: 0px;
+                text-shadow: none;
+                transition: all 1.2s cubic-bezier(0.2, 1, 0.2, 1);
+                &:hover {
+                  border-color: $mColor;
+                  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+                  outline-color: transparent;
+                  outline-offset: 12px;
+                  text-shadow: 2px 2px 3px #000;
+                  cursor: pointer;
+                }
+              }
+              // 文字要素
+              span {
+                display: block;
+                color: $mColor;
+                font-size: 1em;
+                margin-top: 1em;
+              }
+            }
+          }
+        }
+      }
+    }
+    // コピーライト
+    small {
+      color: $mColor;
+      text-align: center;
+    }
+  }
+
+// フッター部分のレスポンシブパソコン版1080px～
+@include pc {
+  footer {
+    .footer_wrapper {
+      .f_ac {
+        left: 0;
+      }
+      .footer_list {
+        width: 80%;
+      }
+    }
+  }
+}
+
+// フッター部分のレスポンシブタブレット版780px～
+@include tab {
+footer {
+    .footer_wrapper {
+      .f_ac {
+        span {
+          opacity: 0.8;
+        }
+      }
+      .footer_list {
+        width: 100%;
+        ul {
+          justify-content: space-evenly;
+          li {
+            margin: 0;
+            a {
+              padding: 1em 2em;
+            }
+          }
         }
       }
     }
   }
+}
 
-
-// 装飾要素ベース部分はここで作成
+// フッター部分のレスポンシブスマホ版380px～
+@include sp {
+footer {
+    .footer_wrapper {
+      .f_ac {
+        top: -10%;
+      }
+      .footer_list {
+        width: 100%;
+        ul {
+          display: block;
+          li {
+            margin: 1em 0;
+            a {
+              font-size: 1.2em;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -5,15 +5,10 @@
   box-sizing: border-box;
 }
 
-/* html,
-main {
- height: 100%;
-} */
-
 body {
   background: #4B4B4B;
   font-family: 'Roboto', sans-serif, 'Righteous', cursive;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.8;
   letter-spacing: 1px;

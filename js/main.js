@@ -45,17 +45,15 @@ $(".menu_nav a").click(function () {
 
 
 // スライドショー一定間隔ごとにCSSアニメーションを繰り返す
-// $(function(){
-//   $(".slide_wrapper .slide_item").css({"position":"relative"});
-//   $(".slide_wrapper .slide_item").hide().css({"position":"absolute"});
-//   $(".slide_wrapper .slide_item:first").addClass("slide");
-//   $(".slide_wrapper .slide_item:nth-child(2)").css({"display":"block"});
-//   setInterval(function(){
-//     var $active = $(".slide_wrapper .slide_item.slide");
-//     var $next = $active.next(".slide_item").length?$active.next(".slide_item"):$(".slide_wrapper .slide_item:first");
-//     var $nextnext = $next.next(".slide_item");
-//     $active.fadeOut(0).removeClass("slide");
-//     $next.show().addClass("slide");
-//     $nextnext.css({"display":"block"});
-//   },5000);
-// });
+	$('.slider').slick({
+		autoplay: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		prevArrow: '<div class="slick-prev"></div>',
+		nextArrow: '<div class="slick-next"></div>',
+		centerMode: true,
+		variableWidth: true,
+		dots: false,
+	});

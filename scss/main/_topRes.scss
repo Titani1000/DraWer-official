@@ -51,7 +51,7 @@
         padding: 1.5em;
 
         h2 {
-          font-size: 2em;
+          font-size: 2.5em;
           margin-bottom: 0.5em;
         }
 
@@ -205,7 +205,7 @@
         padding: 2em;
   
         h2 {
-          font-size: 2em;
+          font-size: 2.5em;
         }
   
         // ポートフォリオリスト
@@ -309,10 +309,10 @@
         .sec_ttl {
           margin-bottom: 2em;
           h2 {
-            font-size: 2em;
+            font-size: 2.5em;
             &::after {
-              width: 80px;
-              right: -80%;
+              width: 60px;
+              right: -65%;
             }
           }
           h3 {
@@ -496,7 +496,7 @@
         text-align: center;
 
         h2 {
-          font-size: 2em;
+          font-size: 2.5em;
           font-family: $mFontE;
           display: inline-block;
           line-height: 1.2em;
@@ -574,7 +574,7 @@
           font-size: 2em;
         }
         p {
-          font-size: 0.8em;
+          font-size: 0.9em;
         }
       }
 
@@ -637,6 +637,555 @@
 
 
 
+// Skills部分のレスポンシブタブレット版780px～
+@include tab {
+#skills {
+
+    .skills_sec {
+
+      // セクションタイトル部分
+      .sec_ttl {
+        padding: 2em 0 3em 2em;
+
+        h2 {
+          font-size: 2.5em;
+
+          &::after {
+            width: 60px;
+            right: -65%;
+          }
+        }
+
+        h3 {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}
+
+// Skills部分のレスポンシブスマホ版380px～
+@include sp {
+#skills {
+    .skills_sec {
+
+      // セクションタイトル部分
+      .sec_ttl {
+        padding: 2em 0 3em 2em;
+
+        h2 {
+          font-size: 2.5em;
+
+          &::after {
+            width: 60px;
+            right: -65%;
+          }
+        }
+
+        h3 {
+          font-size: 1em;
+        }
+      }
+      .skill_content {
+        .slider {
+          li {
+            max-width: 360px;
+            padding: 5em 1em;
+            .skill_txt {
+              h3::after,
+              h3::before {
+                width: 10vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Skills部分のレスポンシブスマホミニ版320px～
+@include spmini {
+#skills {
+    .skills_sec {
+      .skill_content {
+        .slider {
+          li {
+            max-width: 300px;
+            padding: 5em 1em 3em;
+            .skill_txt {
+              width: 100%;
+              h3 {
+                font-size: 1.8em;
+              }
+              p {
+                font-size: 0.9em;
+              }
+            }
+            .cat {
+              font-size: 1.2em;
+              width: 116px;
+             &::before {
+                border-width: 0 200px 80px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+// Works部分のレスポンシブパソコン版1080px～
 @include pc {
-  
+#works {
+
+    .works_sec {
+      padding: 3em 0;
+      background: $mColor;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        display: none
+      }
+
+      // works中身のコンテンツ部分のCSS
+      .works_content {
+        width: 100%;
+        height: auto;
+        margin: 3em 0;
+
+        ul {
+
+          li {
+            padding: 2em 0;
+
+            // 偶数番目のコンテンツ要素のCSS
+            &:nth-child(even) {
+              background-color: $bColor;
+            }
+
+            // コンテンツ中身の画像CSS
+            .works_img {
+              width: 30%;
+              margin: 0 3em;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Works部分のレスポンシブタブレット版780px～
+@include tab {
+  #works {
+
+    .works_sec {
+
+      .sec_ttl {
+        h2 {
+          font-size: 2.5em;
+          &::before {
+            bottom: -15%;
+          }
+      }
+    }
+
+      // works中身のコンテンツ部分のCSS
+      .works_content {
+        ul {
+          li {
+            // 偶数番目のコンテンツ要素のCSS
+            &:nth-child(even) {
+              .works_txt {
+                color: $mColor;
+              }
+
+              .works_img {
+                span {
+                  position: absolute;
+                  bottom: 0;
+                  right: 2%;
+                  text-align: right;
+                }
+              }
+            }
+
+            // コンテンツ中身の画像CSS
+            .works_img {
+              width: 40%;
+              margin: 0 1em;
+              display: inline-flex;
+            }
+
+            // works中身のテキスト部分
+            .works_txt {
+              margin: 0 1em;
+
+              .works_ttl {
+                margin: 2em 0 1em;
+
+                h3 {
+                  font-size: 1.5em;
+                  line-height: 1.2em;
+                }
+                span {
+                  font-size: 0.8em;
+                }
+              }
+
+              .explanation {
+                h4 {
+                  font-size: 1.2em;
+                }
+
+                p {
+                  font-size: 0.8em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Works部分のレスポンシブスマホ版480px～r
+@include sp {
+  #works {
+
+    .works_sec {
+
+      .sec_ttl {
+        h2 {
+          font-size: 2em;
+        }
+        p {
+          font-size: 0.9em;
+        }
+      }
+
+      // works中身のコンテンツ部分のCSS
+      .works_content {
+
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            flex-wrap: wrap;
+
+            // 偶数番目のコンテンツ要素のCSS
+            &:nth-child(even) {
+              flex-direction: row-reverse;
+              background-color: $bColor;
+
+              .works_txt {
+                color: $mColor;
+              }
+
+              .works_img {
+                span {
+                  position: absolute;
+                  bottom: 0;
+                  right: 2%;
+                  text-align: right;
+                }
+              }
+            }
+
+            // コンテンツ中身の画像CSS
+            .works_img {
+              width: 100%;
+              height: auto;
+              margin: 0 3em;
+              display: block;
+            }
+
+            // works中身のテキスト部分
+            .works_txt {
+              width: 96%;
+              margin: 0 auto;
+
+              .works_ttl {
+                flex-wrap: wrap;
+                margin: 2em 0;
+
+                h3 {
+                  span {
+                    display: block;
+                    font-family: $mFontE;
+                  }
+                }
+              }
+
+              .explanation {
+                p {
+                  line-height: 1.5em;
+                  white-space: normal;
+                }
+              }
+
+              // 作品ページとgitへの移動ボタン
+              .button {
+                .works_btn {
+                  a {
+                    padding: 0.7em 0;
+                    font-size: 0.8em;
+                    width: 160px;
+                    height: 36px;
+                  }
+
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// Works部分のレスポンシブスマホ版mini320px～
+@include spmini {
+#works {
+    .works_sec {
+      .works_content {
+        ul {
+          li {
+            .works_txt {
+              .button {
+                .works_btn {
+                  a {
+                    width: 140px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+// CONTACT部分のレスポンシブPC版1080px～
+@include pc {
+  // CONTACT中身のコンテンツ部分
+  #contact {
+
+    .contact_sec {
+      width: 90%;
+
+      // コンタクトタイトル部分
+      .sec_ttl {
+
+        h2 {
+          @include sec_ttl;
+        }
+      }
+
+      // コンタクトフォーム中身
+
+    .contact_content {
+      width: 100%;
+      .cf_no {
+          width: 30%;
+          left: 40px;
+          .border_bottom::after {
+            height: 9vw;
+          }
+        }
+      } 
+    }
+  }
+}
+
+
+// CONTACT部分のレスポンシブタブレット版780px～
+@include tab {
+
+  // CONTACT中身のコンテンツ部分
+  #contact {
+
+    .contact_sec {
+      width: 92%;
+      padding: 1em;
+
+      // コンタクトタイトル部分
+      .sec_ttl {
+
+        h2 {
+          font-size: 2.5em;
+        }
+      }
+
+      // コンタクトフォーム中身
+      .contact_content {
+        width: 90%;
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+
+        .cf_mail {
+          width: 100%;
+
+          .contact_btn {
+            text-align: center;
+            .send {
+              width: 250px;
+              height: 50px;
+              line-height: 50px;
+              position: relative;
+              color: $mColor;
+              display: inline-block;
+              transition: .3s;
+              vertical-align: bottom;
+              overflow: hidden;
+              background: $bColor;
+
+              span {
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transition: all .5s;
+                transform: translate(-50%, 0);
+                display: block;
+                opacity: 1;
+                white-space: nowrap;
+                letter-spacing: 0.1em;
+
+                i {
+                  margin-right: 5px;
+                }
+
+                &:nth-child(2) {
+                  opacity: 0;
+                  transform: translate(-50%, 100%);
+                }
+              }
+
+              &:hover span:nth-child(1) {
+                opacity: 0;
+                transform: translate(-50%, -100%);
+              }
+
+              &:hover span:nth-child(2) {
+                opacity: 1;
+                transform: translate(-50%, 0);
+              }
+            }
+          }
+        }
+
+        .cf_no {
+          width: 100%;
+          min-height: auto;
+          display: flex;
+          flex-direction: unset;
+          justify-content: space-around;
+          left: 0;
+
+          .circle_No {
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .character {
+              width: 100%;
+              text-align: center;
+            }
+          }
+
+          .border_bottom::after {
+            width: 22vw;
+            height: 5px;
+            top: 50%;
+            left: 99%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// CONTACT部分のレスポンシブスマホ版480px～
+@include sp {
+
+  // CONTACT中身のコンテンツ部分
+  #contact {
+
+    .contact_sec {
+      width: 100%;
+
+      .sec_ttl {
+        p {
+          font-size: 0.9em;
+        }
+      }
+
+      // コンタクトフォーム中身
+      .contact_content {
+        width: 98%;
+
+        .cf_mail {
+
+          form {
+
+            .form_tbl {
+              margin: 0;
+
+              tr {
+                display: flex;
+                flex-wrap: wrap;
+                height: 100%;
+                margin: 1em 0;
+
+                td {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        .cf_no {
+          margin: 2em 0;
+        }
+      }
+    }
+  }
+}
+// CONTACT部分のレスポンシブスマホ版mini320px
+@include spmini {
+// CONTACT中身のコンテンツ部分
+#contact {
+    .contact_sec {
+      // コンタクトフォーム中身
+      .contact_content {
+        .cf_mail {
+          form {
+            .form_tbl {
+              tr {
+                .form_select {
+                  .radio_wrapper {
+                    font-size: 0.8em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
